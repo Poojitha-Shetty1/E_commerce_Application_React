@@ -5,11 +5,11 @@ import Registration from './Components/Registartion'
 import LandingPage  from './Components/LandingPage'
 import Home from './Components/Home'
 import UserHome from './User/UserHome'
-import UserDashboard from './User/userDashboard'
 import './App.css'
 import ProtectedRoute from './User/ProtectedRoute'
 import ProductDetails from './User/ProductDetails'
 import Cart from './User/Cart'
+import UserDashboard from './User/userDashboard'
 
 function App() {
   return (
