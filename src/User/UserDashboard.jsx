@@ -5,11 +5,6 @@ import User_nav from './User_nav'
 
 function UserDashboard() {
 
-  // const [cart, setcart] = useState([])
-
-  // function addToCart(item) {
-  //   setcart([...cart, item])
-  // }
   
   return (
     <div>
