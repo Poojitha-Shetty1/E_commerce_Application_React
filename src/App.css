@@ -1,0 +1,331 @@
+.landing-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: black;
+  }
+  
+  .landing-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .landing-nav a:hover {
+    color: yellow;
+  }
+
+
+
+.dashboard-nav a {
+    color: #a0a0c0 !important;
+  }
+  
+  .dashboard-nav a:hover {
+    color: yellow !important;
+  }
+  
+  
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 380px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+  
+  .register-form h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #1a1a2e;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .register-form input {
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: #1a1a2e;
+  }
+  
+  .register-form input:focus {
+    border-color: #e94560;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+  }
+  
+  .register-form input::placeholder {
+    color: #aaa;
+  }
+  
+  .register-form button {
+    padding: 13px;
+    background: linear-gradient(135deg, #e94560, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s, transform 0.1s;
+    margin-top: 5px;
+  }
+  
+  .register-form button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  
+  /* .register-form button:active {
+    transform: translateY(0);
+  } */
+  
+  .register-form p {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .register-form p a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  
+  .register-form p a:hover {
+    text-decoration: underline;
+  }
+  
+  .home-container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 20px;
+  }
+  
+  .home-container h1 {
+    font-size: 58px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff, #e94560);
+  }
+  
+  .home-container p {
+    font-size: 18px;
+    color: #a0a0c0;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .home-container a {
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #e94560, #c0392b);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+  }
+  
+  .home-container a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
+  }
+ 
+
+
+.dashboard-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a1a2e;
+    position:sticky;
+    top:0;
+    z-index: 1000;
+
+  }
+  
+  .dashboard-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .dashboard-links {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 20px;
+  }
+  
+  .dashboard-links a {
+    text-decoration: none;
+    color: #a0a0c0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .dashboard-links a:hover {
+    color: yellow;
+  }
+
+
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    font-size: 14px;
+    margin: 10px 0 5px;
+  }
+  
+  .card .category {
+    font-size: 12px;
+    color: gray;
+    text-transform: capitalize;
+  }
+  
+  .card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a2e;
+  }
+  
+  .card .rating {
+    font-size: 13px;
+    color: #f5a623;
+  }
+
+  .addtocart{
+    padding: 8px;
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+  }
+
+  .addtocart:hover{
+    background-color:#e94560 ;
+  }
+  .card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  
+  .card-buttons button {
+    flex: 1;
+  }
+
+  .product-details {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-details img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-info h2 {
+  font-size: 26px;
+  color: #1a1a2e;
+}
+
+.product-info .description {
+  color: #555;
+  line-height: 1.6;
+}
+
+.product-info .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e94560;
+}
+
+
+.cart-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    border-top: 1px solid #ddd;
+  }
+
+
+  
