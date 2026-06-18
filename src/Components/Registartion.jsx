@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
 
 function Registration() {
 
@@ -11,7 +12,7 @@ function Registration() {
     const [confirmpassword, setconfirmpassword] = useState("")
     let navigate=useNavigate();
 
-    function handlesubmit(e){
+    async function handlesubmit(e){
         e.preventDefault();
 
         if(name === "" || emial === "" || number === "" || password === "" || confirmpassword === ""){
@@ -31,14 +32,24 @@ function Registration() {
             return;
         }
 
-        let obj={
-            name,emial,number,password
-        }
-        console.log(obj)
-        localStorage.setItem("user", JSON.stringify(obj))
+        let response = await axios.post("http://localhost:8080/api/user/register",{uname: name,
+          uemail: emial,
+          unumber: number,
+          upassword: password})
 
-        alert("Registration successfull!!!!!!!")
-        navigate("/login")
+        alert(response.data)
+        if(response.data==="Registered successfully"){
+          navigate("/login")
+        }
+
+        // let obj={
+        //     name,emial,number,password
+        // }
+        // console.log(obj)
+        // localStorage.setItem("user", JSON.stringify(obj))
+
+        // alert("Registration successfull!!!!!!!")
+   
 
         setname("")
         setemial("")

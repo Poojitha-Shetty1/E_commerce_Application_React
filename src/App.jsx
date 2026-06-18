@@ -9,7 +9,7 @@ import './App.css'
 import ProtectedRoute from './User/ProtectedRoute'
 import ProductDetails from './User/ProductDetails'
 import Cart from './User/Cart'
-import UserDashboard from './User/UserDashboard'
+import UserDashboard from './User/userDashboard'
 
 function App() {
   return (

@@ -1,31 +1,33 @@
 import React from 'react'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios';
 
 function Login() {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     let navigate=useNavigate();
 
-    function handlelogin(e){
+   async function handlelogin(e){
 
         e.preventDefault()
-        let storedData = JSON.parse(localStorage.getItem("user"))
+        // let storedData = JSON.parse(localStorage.getItem("user"))
         // console.log(storedData.emial )
         // console.log(storedData.password)
 
-        if(!storedData){
-            alert("No user found")
-            navigate("/reg")
-            return
-        }
-        let token="awesdrctfvgybhnjim";
+        // if(!storedData){
+        //     alert("No user found")
+        //     navigate("/reg")
+        //     return
+        // }
 
-        if(
-            email === storedData.emial &&
-            password === storedData.password
-        ){   
-            localStorage.setItem("token",token)
+        let response = await axios.post("http://localhost:8080/api/user/login",{uemail: email , upassword: password});
+      console.log(response.data)
+        // let token="awesdrctfvgybhnjim";
+
+        if(response.data && response.data.uid){   
+            // localStorage.setItem("token",token)
+            localStorage.setItem("uid", response.data.uid);
             alert("Login Successful")
             navigate("/userDashboard")
         }

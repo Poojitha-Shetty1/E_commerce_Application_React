@@ -12,12 +12,31 @@ function UserHome() {
 const [products, setproducts] = useState([]);
 
 let dispatch=useDispatch();
+let userId= localStorage.getItem("uid");
 
   async function getdata(){
     let res =await axios.get("https://dummyjson.com/products")
     // console.log(res.data.products)
     setproducts(res.data.products);
   }
+
+  async function StoreData(item) {  
+    console.log("Sending:", {
+      ptitle: item.title,
+      pcategory: item.category,
+      pprice: item.price,
+      prating: item.rating,
+      userId: userId
+  })
+    let response = await axios.post("http://localhost:8080/api/cart/addItems", {
+      pimage:item.thumbnail,
+        ptitle: item.title,
+        pcategory: item.category,
+        pprice: item.price,     
+        prating: item.rating,
+        userId: userId
+    })
+}
 
   let result = products.map((item, ind) => {
     return (
@@ -28,12 +47,14 @@ let dispatch=useDispatch();
         <p className='price'>${item.price}</p>
         <p className='rating'>⭐ {item.rating}</p>
         <div className='card-buttons'>
-        <button className='addtocart' 
-        onClick={()=>{dispatch(addItem(item))
-          alert("added to cart");
-        }}>
-          Add to Cart</button>
-        <button onClick={() => { navigate(`/userDashboard/productDetails/${item.id}`) }} className='open-btn'>Open</button>        </div>    
+        <button className='addtocart' onClick={()=>{ dispatch(addItem(item)); StoreData(item);alert("Added to cart!");
+}}>
+  Add to Cart</button>
+
+  <button onClick={() => navigate(`/userDashboard/productDetails/${item.id}`)} 
+className='open-btn'>Open</button>
+    
+    </div>    
         </div>
     )
   })
